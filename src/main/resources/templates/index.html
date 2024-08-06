@@ -1,22 +1,19 @@
 <!doctype html>
-<html lang="en" xmlns:sec="http://www.w3.org/1999/xhtml">
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>메인</title>
+    <title>Document</title>
 </head>
 <body>
-    <h1>카카오 로그인</h1>
+    <th:block sec:authorize="isAnonymous()">
+        <div class="d-grid gap-2">
+            <a href="/login" ><img src="../images/kakao_login_large_wide.png"/></a>
 
-    <a href="/oauth2/authorization/kakao">카카오 로그인</a>
-
-    <hr>
-
-    <th:block sec:authorize="isAuthenticated()">
-        <span sec:authentication="principal"></span>
+        </div>
     </th:block>
-
 </body>
 </html>
