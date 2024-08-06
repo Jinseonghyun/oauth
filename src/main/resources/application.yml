@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: oauth
+
+  profiles:
+    include: oauth
